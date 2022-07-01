@@ -6,7 +6,7 @@ This is a basic game where you type as many words as you can in limited time.
 
 ### Technologies
 
-The app is built in React. SCSS was used to style the app altho the app uses CSS file (SCSS was compiled in VS Code). The SCSS files were added to repository so you can check how the source code look like.
+The app is built in React. SCSS was used to style the app altho the app uses CSS file (SCSS was compiled in VS Code). The SCSS files were added to repository so you can check how the source code looks like.
 
 ### Whose idea was it?
 
