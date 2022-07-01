@@ -1,6 +1,7 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'VT323', monospace, sans-serif;
 }
 
 body {
@@ -8,7 +9,6 @@ body {
   padding: 0;
   background-color: black;
   color: #ffffa9;
-  font-family: 'VT323', monospace, sans-serif;
 }
 
 main {
@@ -31,7 +31,6 @@ textarea {
   background-color: #ffffa9;
   color: black;
   border: none;
-  font-family: 'VT323', monospace, sans-serif;
   font-size: 2rem;
   resize: none;
 }
@@ -67,7 +66,6 @@ textarea::placeholder {
   background-color: black;
   color: #ffffa9;
   border: 2px #ffffa9 solid;
-  font-family: 'VT323', monospace, sans-serif;
   font-size: 3rem;
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in;

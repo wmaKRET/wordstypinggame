@@ -5,6 +5,7 @@ $black: rgb(0, 0, 0);
 
 * {
     box-sizing: border-box;
+    font-family: 'VT323', monospace, sans-serif;
 }
 
 body {
@@ -12,7 +13,6 @@ body {
     padding: 0;
     background-color: $black;
     color: $yellow;
-    font-family: 'VT323', monospace, sans-serif;
 }
 
 main {
@@ -28,7 +28,6 @@ textarea {
     background-color: $yellow;
     color: $black;
     border: none;
-    font-family: 'VT323', monospace, sans-serif;
     font-size: 2rem;
     resize: none;
 
@@ -52,7 +51,6 @@ textarea {
     background-color: $black;
     color: $yellow;
     border: 2px $yellow solid;
-    font-family: 'VT323', monospace, sans-serif;
     font-size: 3rem;
     cursor: pointer;
 

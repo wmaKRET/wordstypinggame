@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 function App() {
   const TIMER_VALUE = 10
@@ -12,22 +12,23 @@ function App() {
 
   const textAreaRef = useRef(null)
 
-  function getLocalStorageHighScore(){
+  function getLocalStorageHighScore() {
     return localStorage.getItem('wordstypinggame')
-        ? localStorage.getItem('wordstypinggame')
-        : null
+      ? localStorage.getItem('wordstypinggame')
+      : null
   }
 
-  function handleChange(event){
-    const {value} = event.target
+  function handleChange(event) {
+    const { value } = event.target
     setText(value)
   }
 
-  function startGame(){
+  function startGame() {
     setIsGameOver(false)
     setText('')
     setTimeRemaining(TIMER_VALUE)
     setIsTimeRunning(true)
+    // enables textarea and focuses on it after pressing button
     textAreaRef.current.disabled = false
     textAreaRef.current.focus()
   }
@@ -37,7 +38,7 @@ function App() {
     return wordsArray.filter(word => word !== '').length
   }
 
-  function endGame(){
+  function endGame() {
     const wordsTyped = countHowManyWords(text)
     setIsGameOver(true)
     setIsTimeRunning(false)
@@ -49,19 +50,19 @@ function App() {
   }
 
   useEffect(() => {
-    if (isTimeRunning && timeRemaining > 0){
+    if (isTimeRunning && timeRemaining > 0) {
       setTimeout(() => {
         setTimeRemaining(time => time - 1)
       }, 1000)
     } else if (timeRemaining === 0) endGame()
   }
-  ,[timeRemaining, isTimeRunning])
+    , [timeRemaining, isTimeRunning])
 
   return (
     <main>
       <h1 className="text">How fast can you type?</h1>
       {highScore && <h3>High score: {highScore}</h3>}
-      <textarea 
+      <textarea
         ref={textAreaRef}
         value={text}
         placeholder="Type here..."
@@ -69,7 +70,7 @@ function App() {
         onChange={handleChange}
       />
       <h3 className="text">Time remaining: {timeRemaining}</h3>
-      <button 
+      <button
         className="text btn"
         disabled={isTimeRunning}
         onClick={startGame}
