@@ -2,7 +2,6 @@ $yellow: rgb(255, 255, 169);
 $gray: rgb(180, 180, 180);
 $darkgray: rgb(77, 77, 77);
 $black: rgb(0, 0, 0);
-$white: rgb(236, 236, 236);
 
 * {
     box-sizing: border-box;
@@ -46,7 +45,7 @@ textarea {
 
 .btn {
     background-color: $black;
-    color: $white;
+    color: $yellow;
     border: 2px $yellow solid;
     font-family: 'VT323', monospace, sans-serif;
     font-size: 3rem;
