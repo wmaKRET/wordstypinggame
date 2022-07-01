@@ -35,6 +35,10 @@ textarea {
     &:disabled {
         background-color: $gray;
     }
+
+    &::placeholder {
+        color: $darkgray;
+    }
 }
 
 .text {
