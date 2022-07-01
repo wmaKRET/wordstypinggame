@@ -5,17 +5,25 @@ function App() {
 
   const [text, setText] = useState('')
   const [timeRemaining, setTimeRemaining] = useState(TIMER_VALUE)
-  //const [isTimeRunning, setIsTimeRunning] = useState(false)
+  const [isTimeRunning, setIsTimeRunning] = useState(false)
 
   function handleChange(event){
     const {value} = event.target
     setText(value)
   }
 
-  // useEffect(() => {
-    
-  // }
-  // ,[timeRemaining])
+  function startGame(){
+    setIsTimeRunning(true)
+  }
+
+  useEffect(() => {
+    if (isTimeRunning && timeRemaining > 0){
+      setTimeout(() => {
+        setTimeRemaining(time => time - 1)
+      }, 1000)
+    }
+  }
+  ,[timeRemaining, isTimeRunning])
 
   return (
     <main>
@@ -24,13 +32,14 @@ function App() {
       <textarea 
         name={text}
         placeholder="Type here..."
-        disabled={false}
+        //disabled={!isTimeRunning}
         onChange={handleChange}
       />
       <h3 className="text">Time remaining: {timeRemaining}</h3>
       <button 
         className="text btn"
-        disabled={false}
+        //disabled={isTimeRunning}
+        onClick={startGame}
       >START
       </button>
       <h2 className="text">Word count: 0</h2>
