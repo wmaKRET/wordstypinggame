@@ -8,7 +8,6 @@ body {
   padding: 0;
   background-color: black;
   color: #ffffa9;
-  font-size: 10px;
   font-family: 'VT323', monospace, sans-serif;
 }
 
@@ -24,5 +23,48 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+textarea {
+  height: 300px;
+  width: 400px;
+  background-color: #ffffa9;
+  color: black;
+  border: none;
+  font-family: 'VT323', monospace, sans-serif;
+  font-size: 2rem;
+  resize: none;
+}
+
+textarea:disabled {
+  background-color: #b4b4b4;
+}
+
+.text {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.btn {
+  background-color: black;
+  color: #ececec;
+  border: 2px #ffffa9 solid;
+  font-family: 'VT323', monospace, sans-serif;
+  font-size: 3rem;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  background-color: #ffffa9;
+  color: black;
+}
+
+.btn:disabled {
+  background-color: #b4b4b4;
+  color: #4d4d4d;
+  border: 2px #4d4d4d solid;
 }
 /*# sourceMappingURL=app.css.map */
