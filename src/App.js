@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
 
 function App() {
   const TIMER_VALUE = 10
@@ -8,6 +8,9 @@ function App() {
   const [isTimeRunning, setIsTimeRunning] = useState(false)
   const [isGameOver, setIsGameOver] = useState(false)
   const [howManyWords, setHowManyWords] = useState(0)
+  const [highScore, setHighScore] = useState(null)
+  
+  const textAreaRef = useRef(null)
 
   function handleChange(event){
     const {value} = event.target
@@ -19,17 +22,21 @@ function App() {
     setText('')
     setTimeRemaining(TIMER_VALUE)
     setIsTimeRunning(true)
-  }
-
-  function endGame(){
-    setIsGameOver(true)
-    setIsTimeRunning(false)
-    setHowManyWords(countHowManyWords(text))
+    textAreaRef.current.disabled = false
+    textAreaRef.current.focus()
   }
 
   function countHowManyWords(textArea) {
     const wordsArray = textArea.trim().split(' ')
     return wordsArray.filter(word => word !== '').length
+  }
+
+  function endGame(){
+    const wordsTyped = countHowManyWords(text)
+    setIsGameOver(true)
+    setIsTimeRunning(false)
+    setHowManyWords(wordsTyped)
+    if (wordsTyped > highScore) setHighScore(wordsTyped)
   }
 
   useEffect(() => {
@@ -44,8 +51,9 @@ function App() {
   return (
     <main>
       <h1 className="text">How fast can you type?</h1>
-      {/* <h3>High score: 0</h3> */}
+      {highScore && <h3>High score: {highScore}</h3>}
       <textarea 
+        ref={textAreaRef}
         value={text}
         placeholder="Type here..."
         disabled={!isTimeRunning}

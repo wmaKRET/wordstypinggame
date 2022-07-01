@@ -63,6 +63,7 @@ textarea::placeholder {
 }
 
 .btn {
+  padding: 0 0.5em;
   background-color: black;
   color: #ffffa9;
   border: 2px #ffffa9 solid;
