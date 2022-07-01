@@ -8,9 +8,15 @@ function App() {
   const [isTimeRunning, setIsTimeRunning] = useState(false)
   const [isGameOver, setIsGameOver] = useState(false)
   const [howManyWords, setHowManyWords] = useState(0)
-  const [highScore, setHighScore] = useState(null)
-  
+  const [highScore, setHighScore] = useState(getLocalStorageHighScore())
+
   const textAreaRef = useRef(null)
+
+  function getLocalStorageHighScore(){
+    return localStorage.getItem('wordstypinggame')
+        ? localStorage.getItem('wordstypinggame')
+        : null
+  }
 
   function handleChange(event){
     const {value} = event.target
@@ -36,7 +42,10 @@ function App() {
     setIsGameOver(true)
     setIsTimeRunning(false)
     setHowManyWords(wordsTyped)
-    if (wordsTyped > highScore) setHighScore(wordsTyped)
+    if (wordsTyped > highScore) {
+      setHighScore(wordsTyped)
+      localStorage.setItem('wordstypinggame', wordsTyped)
+    }
   }
 
   useEffect(() => {
