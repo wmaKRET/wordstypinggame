@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wordstypinggame/static/css/main.df56fb4a.css",
+    "main.js": "/wordstypinggame/static/js/main.d0297762.js",
+    "index.html": "/wordstypinggame/index.html",
+    "main.df56fb4a.css.map": "/wordstypinggame/static/css/main.df56fb4a.css.map",
+    "main.d0297762.js.map": "/wordstypinggame/static/js/main.d0297762.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df56fb4a.css",
+    "static/js/main.d0297762.js"
+  ]
+}
